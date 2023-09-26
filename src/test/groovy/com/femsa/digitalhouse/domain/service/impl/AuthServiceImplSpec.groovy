@@ -21,7 +21,7 @@ class AuthServiceImplSpec extends Specification {
         userRepository.findByUsername(username) >> User.builder().id("1").username("admin@gmail.com").password("Test.123").build()
 
         when:
-        UserDetailsDTO result = subject.login(username, password)
+        def result = subject.login(username, password)
 
         then:
         result instanceof UserDetailsDTO
