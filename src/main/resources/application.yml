@@ -1,0 +1,14 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /api/v1
+  shutdown: graceful
+  error:
+    include-message:
+      always
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
