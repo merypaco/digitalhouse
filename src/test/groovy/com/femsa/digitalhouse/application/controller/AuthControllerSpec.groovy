@@ -14,7 +14,7 @@ class AuthControllerSpec extends Specification {
 
     def "create should delegate the execution to the service layer"() {
         given:
-        def response = new UserDetailsDTO("1", "admin@hotmail.com")
+        def response = new UserDetailsDTO("1", "admin@hotmail.com", "Joe", "Doe", "5635353535")
         def request = LoginDTO.builder().username("admin@gmail.com").password("Test").build()
 
         when:

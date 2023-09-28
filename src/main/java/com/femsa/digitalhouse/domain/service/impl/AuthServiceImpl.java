@@ -24,8 +24,6 @@ public class AuthServiceImpl implements AuthService {
             throw new InvalidPasswordException("Password is incorrect");
         }
 
-        System.out.println(new UserDetailsDTO(userFound.getId(), userFound.getUsername()));
-
-        return new UserDetailsDTO(userFound.getId(), userFound.getUsername());
+        return new UserDetailsDTO(userFound.getId(), userFound.getUsername(), userFound.getName(), userFound.getLastName(), userFound.getPhoneNumber());
     }
 }

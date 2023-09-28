@@ -12,7 +12,7 @@ public class UserRepository {
 
     UserRepository() {
         users = new ArrayList<>();
-        users.add(User.builder().id("1").username("admin@gmail.com").password("Test.123").build());
+        users.add(User.builder().id("1").username("admin@gmail.com").password("Test.123").name("Joe").lastName("Doe").phoneNumber("5635353535").build());
     }
     public List<User> findAll() {
         return users;

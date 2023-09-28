@@ -14,6 +14,9 @@ class UserRepositorySpec extends Specification {
         users.size() == 1
         users[0].username == "admin@gmail.com"
         users[0].password == "Test.123"
+        users[0].name == "Joe"
+        users[0].lastName == "Doe"
+        users[0].phoneNumber == "5635353535"
     }
 
     def "should search for a user by existing username and return the user"() {
