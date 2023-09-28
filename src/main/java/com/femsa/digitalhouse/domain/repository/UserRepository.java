@@ -10,7 +10,7 @@ import java.util.List;
 public class UserRepository {
     private final List<User> users;
 
-    private UserRepository() {
+    UserRepository() {
         users = new ArrayList<>();
         users.add(User.builder().id("1").username("admin@gmail.com").password("Test.123").build());
     }

@@ -4,10 +4,9 @@ import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 
-@Data
+@Getter
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 public class LoginDTO {
     @NotBlank(message = "username is required")
     private String username;

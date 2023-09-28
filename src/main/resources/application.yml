@@ -7,6 +7,11 @@ server:
     include-message:
       always
 
+spring:
+  application:
+    jackson:
+      default-property-inclusion: non_null
+
 management:
   endpoints:
     web:
