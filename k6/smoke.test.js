@@ -24,9 +24,10 @@ export function setup() {
 }
 
 export default function (data) {
+  const url = "http://localhost:9000/api/v1/auth/login";
   const headers = data["headers"];
   const payload = users.at(0);
-  const response = http.post(__ENV.URL, JSON.stringify(payload), { headers });
+  const response = http.post(url, JSON.stringify(payload), { headers });
 
   console.info(`status code: ${response.status}`);
   sleep(1);

@@ -7,4 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo 'hello testing'
+      - run: docker compose up -d
+      - name: wait for service to be healthy
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
+      - uses: grafana/k6-action@v0.3.0
+        with:
+          filename: k6/smoke.test.js
+          flags: --vus 5 --duration 30s
