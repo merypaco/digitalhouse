@@ -4,5 +4,11 @@ services:
     image: mirakel14/digital-house-test
     ports:
       - "9000:9000"
+    networks:
+      - my-network
     extra_hosts:
       - "host.docker.internal:host-gateway"
+
+networks:
+  my-network:
+    driver: bridge

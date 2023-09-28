@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker run -d -p 9000:9000 --net="bridge" mirakel14/digital-house-test
+      - run: docker compose up -d
       - name: wait for service to be healthy
         uses: jakejarvis/wait-action@master
         with:
