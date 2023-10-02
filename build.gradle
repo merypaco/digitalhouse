@@ -4,13 +4,15 @@ plugins {
 	id 'jacoco'
 	id 'org.springframework.boot' version '2.7.17-SNAPSHOT'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id "org.sonarqube" version "3.0"
 }
 
 group = 'com.femsa'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '1.8'
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 configurations {
@@ -47,8 +49,20 @@ sourceSets {
 	}
 }
 
+javadoc {
+	failOnError true
+}
+
+jacoco {
+	toolVersion = "0.8.8"
+	reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
 jacocoTestReport {
-	dependsOn test
+	reports {
+		xml.required = true
+		csv.required = true
+	}
 }
 
 tasks.named('test') {
